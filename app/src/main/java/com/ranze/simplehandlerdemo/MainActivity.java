@@ -40,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void handleMessage(final Message msg) {
                 super.handleMessage(msg);
-                Log.d(TAG, "handle message: " + msg);
+                final String msgStr = msg.toString();
+                Log.d(TAG, "handle message: " + msgStr);
                 mMessageTv.post(new Runnable() {
                     @Override
                     public void run() {
-                        mMessageTv.setText("Message is: " + msg);
+                        mMessageTv.setText("Message is: " + msgStr);
                     }
                 });
             }
